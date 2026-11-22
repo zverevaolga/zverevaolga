@@ -184,12 +184,14 @@
     }
 
     .footer-title em {
-      color: var(--olive);
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 400;
-    }
+  color: var(--olive);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
 
-    .footer-copy p {
+.footer-title .title-break {
+  display: block;
+}    .footer-copy p {
       margin: 7px 0 0;
       color: #25251f;
       font-size: clamp(.98rem, 1.35vw, 1.13rem);
@@ -378,7 +380,9 @@
 
     <section class="footer-card" aria-label="Результат и контакты">
       <div class="footer-copy">
-        <h2 class="footer-title">Понимание <em>перед покупкой</em>, а не после</h2>
+        <h2 class="footer-title">
+  Понимание <em>перед покупкой</em>,<span class="title-break">а не после</span>
+</h2>
         <p>Готовлю заключение о рисках, ограничениях и возможностях. При необходимости сопровождаю сделку.</p>
         <p>Моя задача — чтобы вы понимали, какую землю покупаете и сможете ли реализовать свои планы.</p>
       </div>
