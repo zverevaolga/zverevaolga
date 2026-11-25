@@ -238,7 +238,166 @@
       outline: 3px solid #536a22;
       outline-offset: 4px;
     }
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
 
+.info-card {
+  min-width: 0;
+  padding: clamp(22px, 3vw, 34px);
+  border: 1px solid rgba(198, 227, 100, .45);
+  border-radius: 26px;
+  background: rgba(30, 33, 26, .88);
+  color: var(--cream);
+}
+
+.info-label {
+  margin: 0 0 14px;
+  color: var(--lime);
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.info-title {
+  margin: 0 0 20px;
+  color: var(--cream);
+  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  line-height: 1.15;
+}
+
+.info-text {
+  margin: 10px 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.info-data {
+  display: grid;
+  gap: 15px;
+  margin: 0;
+}
+
+.info-data dt {
+  margin-bottom: 4px;
+  color: var(--lime);
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.info-data dd {
+  margin: 0;
+  color: var(--cream);
+  font-size: 1rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.info-result {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.info-result strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--lime);
+}
+
+.info-result p {
+  margin: 0;
+  color: var(--cream);
+  line-height: 1.55;
+}
+
+.info-source {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: .8rem;
+  line-height: 1.45;
+}
+
+.trial-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 20px;
+  padding: clamp(24px, 3vw, 38px);
+  border-radius: 26px;
+  background: var(--lime);
+  color: #171a10;
+}
+
+.trial-copy {
+  flex: 1 1 300px;
+}
+
+.trial-title {
+  margin: 0 0 10px;
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+  line-height: 1.15;
+}
+
+.trial-description {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.trial-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: var(--graphite);
+  color: var(--cream);
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.trial-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.2);
+}
+
+.trial-button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+@media (max-width: 1050px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .info-card {
+    padding: 22px 18px;
+    border-radius: 20px;
+  }
+
+  .trial-card {
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+
+  .trial-button {
+    width: 100%;
+    text-align: center;
+  }
+}
     @media (max-width: 1050px) {
       .checks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .check:last-child { grid-column: 1 / -1; }
@@ -379,6 +538,125 @@
       <div class="check"><span class="number">5</span><span class="check-text">Возможность строительства</span></div>
     </section>
 
+<!-- ПРИМЕР ПРОВЕРКИ И ОБ ЭКСПЕРТЕ -->
+
+<section class="info-grid" aria-label="Пример проверки и об эксперте">
+
+  <article class="info-card">
+
+    <p class="info-label">Пример из открытых материалов суда</p>
+
+    <h2 class="info-title">Как выглядит проверка участка</h2>
+
+    <dl class="info-data">
+
+      <div>
+        <dt>Кадастровый номер</dt>
+        <dd>91:01:067001:109</dd>
+      </div>
+
+      <div>
+        <dt>Категория земли</dt>
+        <dd>Земли населённых пунктов</dd>
+      </div>
+
+      <div>
+        <dt>Вид разрешённого использования</dt>
+        <dd>Для строительства и обслуживания жилого дома, хозяйственных построек и сооружений (приусадебный участок)</dd>
+      </div>
+
+      <div>
+        <dt>Территориальная зона</dt>
+        <dd>Ж-2.1/Б/-/21. Индивидуальное жилищное строительство, тип 1</dd>
+      </div>
+
+      <div>
+        <dt>Что установлено</dt>
+        <dd>На участке зарегистрирован жилой дом.</dd>
+      </div>
+
+    </dl>
+
+    <div class="info-result">
+      <strong>Вывод</strong>
+      <p>
+        ВРИ и территориальная зона предусматривают жилую застройку.
+        В судебном документе подтверждено наличие зарегистрированного
+        жилого дома. Возможность нового строительства необходимо
+        проверять с учётом параметров застройки и действующих ограничений.
+      </p>
+    </div>
+
+    <p class="info-source">
+      Пример составлен по открытым материалам решения
+      Балаклавского районного суда от 21.04.2025,
+      дело № 2А-1131/2025. Не является актуальным заключением
+      о возможности строительства на этом участке.
+    </p>
+
+  </article>
+
+
+  <article class="info-card">
+
+    <p class="info-label">Ваш эксперт по земле</p>
+
+    <h2 class="info-title">Ольга Зверева</h2>
+
+    <p class="info-text">
+      Прошла обучение в Академии Виолетты Басиной.
+      Проверила десятки земельных участков, изучая
+      документы, градостроительные зоны, ограничения
+      и возможность строительства.
+    </p>
+
+    <p class="info-text">
+      Работаю с земельными участками в Севастополе
+      и Республике Крым.
+    </p>
+
+    <div class="info-result">
+      <strong>Моя задача</strong>
+      <p>
+        Помочь разобраться в документах и понять,
+        подходит ли участок для ваших планов
+        до того, как вы заплатите за него.
+      </p>
+    </div>
+
+  </article>
+
+</section>
+
+
+<!-- ПРОБНАЯ ПРОВЕРКА -->
+
+<section class="trial-card" aria-label="Пробная проверка участка">
+
+  <div class="trial-copy">
+
+    <h2 class="trial-title">
+      Попробуйте проверить участок самостоятельно
+    </h2>
+
+    <p class="trial-description">
+      Перейдите в «Навигатор по земле» и познакомьтесь
+      с возможностями сервиса на пробной проверке.
+    </p>
+
+  </div>
+
+  <a
+    class="trial-button"
+    href="https://landszs.ru/r/815aa197"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Попробовать проверку
+  </a>
+
+</section>
+
     <section class="footer-card" aria-label="Результат и контакты">
       <div class="footer-copy">
         <h2 class="footer-title">
@@ -391,7 +669,14 @@
 
       <div class="contact">
         <a class="phone" href="tel:+79788110047">+7 978 811 0047</a>
-        <a class="consult" href="tel:+79788110047">Получите консультацию</a>
+        <a
+  class="consult"
+  href="https://t.me/zverololga"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Получите консультацию
+</a>
       </div>
     </section>
   </main>
