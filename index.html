@@ -1,11 +1,12 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#1a1a1a">
-  <meta name="description" content="Ольга Зверева — эксперт по земельным участкам. Проверка земли перед покупкой.">
-  <title>Ольга Зверева — эксперт по земельным участкам</title>
+  <meta name="description" content="Ольга Зверева — эксперт по земельным участкам. Проверка земли перед покупкой в Севастополе и Республике Крым.">
+  <title>Ольга Зверева — проверка земельных участков</title>
 
   <style>
     :root {
@@ -14,10 +15,13 @@
       --lime: #c6e364;
       --muted: #c8c7c0;
       --olive: #52612d;
-      --line: rgba(198, 227, 100, .55);
+      --line: rgba(198, 227, 100, .45);
+      --card: rgba(30, 33, 26, .92);
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     html {
       scroll-behavior: smooth;
@@ -43,6 +47,8 @@
       padding: clamp(18px, 3.2vw, 48px);
     }
 
+    /* ПЕРВЫЙ ЭКРАН */
+
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 1.12fr) minmax(280px, .78fr);
@@ -50,7 +56,9 @@
       gap: clamp(28px, 4vw, 64px);
     }
 
-    .intro { min-width: 0; }
+    .intro {
+      min-width: 0;
+    }
 
     h1 {
       margin: 0;
@@ -60,7 +68,6 @@
       font-weight: 800;
       letter-spacing: -.055em;
       line-height: .98;
-      text-transform: none;
     }
 
     h1 .accent {
@@ -123,6 +130,8 @@
       height: auto;
     }
 
+    /* ПЯТЬ НАПРАВЛЕНИЙ ПРОВЕРКИ */
+
     .checks {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -158,7 +167,309 @@
       font-weight: 800;
     }
 
-    .check-text { min-width: 0; }
+    .check-text {
+      min-width: 0;
+    }
+
+    /* ДВЕ КОЛОНКИ: ПРИМЕР И ЭКСПЕРТ */
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+      align-items: stretch;
+    }
+
+    .info-card {
+      min-width: 0;
+      padding: clamp(22px, 3vw, 34px);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: var(--card);
+      color: var(--cream);
+    }
+
+    .info-label {
+      margin: 0 0 14px;
+      color: var(--lime);
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .info-title {
+      margin: 0 0 20px;
+      color: var(--cream);
+      font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+      line-height: 1.15;
+    }
+
+    .info-text {
+      margin: 10px 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+
+    /* ДАННЫЕ УЧАСТКА */
+
+    .info-data {
+      display: grid;
+      gap: 15px;
+      margin: 0;
+    }
+
+    .info-data dt {
+      margin-bottom: 4px;
+      color: var(--lime);
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .info-data dd {
+      margin: 0;
+      color: var(--cream);
+      font-size: 1rem;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .info-result {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .info-result strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--lime);
+    }
+
+    .info-result p {
+      margin: 0 0 12px;
+      color: var(--cream);
+      line-height: 1.55;
+    }
+
+    .info-result p:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-source {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: .8rem;
+      line-height: 1.45;
+    }
+
+    /* КАРТОЧКА ЭКСПЕРТА */
+
+    .expert-card {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .expert-card .info-title {
+      margin-bottom: 14px;
+    }
+
+    .expert-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .expert-point {
+      display: grid;
+      grid-template-columns: 38px minmax(0, 1fr);
+      gap: 13px;
+      align-items: start;
+    }
+
+    .expert-point-number {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border-radius: 50%;
+      color: #171a10;
+      background: var(--lime);
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .expert-point h3 {
+      margin: 0 0 5px;
+      color: var(--cream);
+      font-size: 1.05rem;
+      line-height: 1.3;
+    }
+
+    .expert-point p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .96rem;
+      line-height: 1.5;
+    }
+
+    .expert-subtitle {
+      margin: 24px 0 12px;
+      color: var(--cream);
+      font-size: 1.25rem;
+      line-height: 1.25;
+    }
+
+    .expert-checklist {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .expert-checklist li {
+      position: relative;
+      padding-left: 25px;
+      color: var(--muted);
+      font-size: .96rem;
+      line-height: 1.5;
+    }
+
+    .expert-checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--lime);
+      font-weight: 800;
+    }
+
+    .expert-price {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .expert-price-label {
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.4;
+    }
+
+    .expert-price-value {
+      color: var(--lime);
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    /* ШИРОКИЙ БЛОК «ЧТО ВЫ ПОЛУЧИТЕ» */
+
+    .expert-result {
+      grid-column: 1 / -1;
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+      padding: clamp(24px, 3vw, 36px);
+      border: 1px solid rgba(198, 227, 100, .55);
+      border-top: 3px solid var(--lime);
+      border-radius: 24px;
+      background: #35443b;
+      color: var(--cream);
+    }
+
+    .expert-result strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--lime);
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .expert-result h3 {
+      margin: 0 0 12px;
+      color: var(--cream);
+      font-size: clamp(1.5rem, 2.7vw, 2.2rem);
+      line-height: 1.15;
+    }
+
+    .expert-result p {
+      max-width: 1050px;
+      margin: 0;
+      color: #f4f2e9;
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+
+    /* ПРОБНАЯ ПРОВЕРКА */
+
+    .trial-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 20px;
+      padding: clamp(24px, 3vw, 38px);
+      border-radius: 26px;
+      background: var(--lime);
+      color: #171a10;
+    }
+
+    .trial-copy {
+      flex: 1 1 300px;
+    }
+
+    .trial-title {
+      margin: 0 0 10px;
+      color: #171a10;
+      font-size: clamp(1.5rem, 3vw, 2.3rem);
+      line-height: 1.15;
+    }
+
+    .trial-description {
+      margin: 0;
+      color: #25251f;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .trial-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      background: var(--graphite);
+      color: var(--cream);
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform .2s ease, filter .2s ease;
+    }
+
+    .trial-button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.2);
+    }
+
+    .trial-button:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 4px;
+    }
+
+    /* КОНТАКТЫ */
 
     .footer-card {
       display: grid;
@@ -172,7 +483,9 @@
       background: var(--cream);
     }
 
-    .footer-copy { min-width: 0; }
+    .footer-copy {
+      min-width: 0;
+    }
 
     .footer-title {
       margin: 0 0 12px;
@@ -245,354 +558,15 @@
       outline-offset: 4px;
     }
 
-    /* ИНФОРМАЦИОННЫЕ БЛОКИ */
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 24px;
-      align-items: stretch;
-    }
-
-    .info-card {
-      min-width: 0;
-      padding: clamp(22px, 3vw, 34px);
-      border: 1px solid rgba(198, 227, 100, .45);
-      border-radius: 26px;
-      background: rgba(30, 33, 26, .88);
-      color: var(--cream);
-    }
-
-    .info-label {
-      margin: 0 0 14px;
-      color: var(--lime);
-      font-size: .82rem;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .info-title {
-      margin: 0 0 20px;
-      color: var(--cream);
-      font-size: clamp(1.5rem, 2.5vw, 2.1rem);
-      line-height: 1.15;
-    }
-
-    .info-text {
-      margin: 10px 0;
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.55;
-    }
-
-    .info-data {
-      display: grid;
-      gap: 15px;
-      margin: 0;
-    }
-
-    .info-data dt {
-      margin-bottom: 4px;
-      color: var(--lime);
-      font-size: .9rem;
-      font-weight: 700;
-    }
-
-    .info-data dd {
-      margin: 0;
-      color: var(--cream);
-      font-size: 1rem;
-      line-height: 1.45;
-      overflow-wrap: anywhere;
-    }
-
-    .info-result {
-      margin-top: 22px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-    }
-
-    .info-result strong {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--lime);
-    }
-
-    .info-result p {
-      margin: 0;
-      color: var(--cream);
-      line-height: 1.55;
-    }
-
-    .info-source {
-      margin-top: 16px;
-      color: var(--muted);
-      font-size: .8rem;
-      line-height: 1.45;
-    }
-
-    /* НОВОЕ ОФОРМЛЕНИЕ ПРИМЕРА ИЗ ПРАКТИКИ */
-
-    .practice-card {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      min-width: 0;
-      padding: clamp(20px, 2.2vw, 28px);
-      color: #F4F2E9;
-    }
-
-    .practice-card .info-label {
-      color: #C4D99A;
-    }
-
-    .practice-card .info-title {
-      color: #F4F2E9;
-      line-height: 1.25;
-    }
-
-    .practice-location,
-    .practice-item span {
-      color: #D0D9D0;
-    }
-
-    .practice-location {
-      margin: 0;
-      line-height: 1.45;
-    }
-
-    .practice-cadastral,
-    .practice-data {
-      background: #35443B;
-      border-radius: 12px;
-      padding: 16px;
-    }
-
-    .practice-cadastral span,
-    .practice-findings h3 {
-      color: #C4D99A;
-      font-size: .78rem;
-      font-weight: 600;
-    }
-
-    .practice-cadastral h3 {
-      color: #F4F2E9;
-      font-size: clamp(1.2rem, 2vw, 1.6rem);
-      margin: 8px 0 0;
-      overflow-wrap: anywhere;
-    }
-
-    .practice-data {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px 12px;
-    }
-
-    .practice-item {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      min-width: 0;
-    }
-
-    .practice-item strong {
-      color: #F4F2E9;
-      line-height: 1.4;
-      overflow-wrap: anywhere;
-    }
-
-    .practice-findings {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .practice-findings h3 {
-      margin: 0;
-    }
-
-    .practice-findings p {
-      color: #F0EEE6;
-      line-height: 1.5;
-      margin: 0;
-    }
-
-    .practice-conclusion {
-      background: #473D2F;
-      border-radius: 12px;
-      padding: 18px;
-    }
-
-    .practice-conclusion strong {
-      color: #F0C982;
-      font-size: .8rem;
-    }
-
-    .practice-conclusion p {
-      color: #FFF4E0;
-      line-height: 1.5;
-      margin: 10px 0 0;
-    }
-
-    /* БЛОК ЭКСПЕРТА */
-
-    .expert-card {
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      overflow: hidden;
-    }
-
-    .expert-photo {
-      width: 100%;
-      margin-bottom: 24px;
-      overflow: hidden;
-      border-radius: 16px;
-      background: #273022;
-    }
-
-    .expert-photo img {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-
-    .expert-content {
-      min-width: 0;
-    }
-
-    .expert-list {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      margin-top: 20px;
-    }
-
-    .expert-point {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      min-width: 0;
-    }
-
-    .expert-point-number {
-      display: grid;
-      flex: 0 0 34px;
-      width: 34px;
-      height: 34px;
-      place-items: center;
-      border-radius: 50%;
-      color: #171a10;
-      background: var(--lime);
-      font-size: 1rem;
-      font-weight: 800;
-    }
-
-    .expert-point h3 {
-      margin: 0 0 6px;
-      color: var(--cream);
-      font-size: 1.05rem;
-      line-height: 1.35;
-    }
-
-    .expert-point p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .96rem;
-      line-height: 1.5;
-    }
-
-    .expert-result {
-      margin-top: 26px;
-      padding: 22px;
-      border-radius: 16px;
-      background: #35443B;
-    }
-
-    .expert-result strong {
-      display: block;
-      margin-bottom: 10px;
-      color: #C4D99A;
-      font-size: .8rem;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-
-    .expert-result h3 {
-      margin: 0 0 10px;
-      color: #F4F2E9;
-      font-size: 1.35rem;
-    }
-
-    .expert-result p {
-      margin: 0;
-      color: #D0D9D0;
-      line-height: 1.55;
-    }
-
-    /* ПРОБНАЯ ПРОВЕРКА */
-
-    .trial-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 24px;
-      margin-top: 20px;
-      padding: clamp(24px, 3vw, 38px);
-      border-radius: 26px;
-      background: var(--lime);
-      color: #171a10;
-    }
-
-    .trial-copy {
-      flex: 1 1 300px;
-    }
-
-    .trial-title {
-      margin: 0 0 10px;
-      font-size: clamp(1.5rem, 3vw, 2.3rem);
-      line-height: 1.15;
-    }
-
-    .trial-description {
-      margin: 0;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-
-    .trial-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 14px 24px;
-      border-radius: 999px;
-      background: var(--graphite);
-      color: var(--cream);
-      font-weight: 800;
-      text-decoration: none;
-      transition: transform .2s ease, filter .2s ease;
-    }
-
-    .trial-button:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.2);
-    }
-
-    .trial-button:focus-visible {
-      outline: 3px solid #fff;
-      outline-offset: 4px;
-    }
-
-    /* АДАПТИВНОСТЬ */
+    /* ПЛАНШЕТЫ */
 
     @media (max-width: 1050px) {
       .info-grid {
         grid-template-columns: 1fr;
+      }
+
+      .expert-result {
+        grid-column: 1;
       }
 
       .checks {
@@ -614,6 +588,8 @@
         border-top: 2px solid #758d32;
       }
     }
+
+    /* МОБИЛЬНЫЕ УСТРОЙСТВА */
 
     @media (max-width: 700px) {
       .page {
@@ -684,16 +660,13 @@
         border-radius: 20px;
       }
 
-      .practice-card {
-        padding: 22px 18px;
-      }
-
-      .practice-data {
-        grid-template-columns: 1fr 1fr;
-      }
-
       .expert-result {
-        padding: 18px;
+        padding: 24px 18px;
+        border-radius: 20px;
+      }
+
+      .expert-result p {
+        font-size: 1rem;
       }
 
       .trial-card {
@@ -775,12 +748,14 @@
 <body>
   <main class="page">
 
+    <!-- ПЕРВЫЙ ЭКРАН -->
+
     <section class="hero" aria-label="Знакомство с экспертом">
-
       <div class="intro">
-
         <h1>
-          Одна проверка <span class="accent">вместо</span> одной дорогой ошибки
+          Одна проверка
+          <span class="accent">вместо</span>
+          одной дорогой ошибки
         </h1>
 
         <div class="role">Эксперт по земельным участкам</div>
@@ -789,7 +764,6 @@
           <p class="name">Ольга Зверева</p>
           <p class="subtitle">Проверка земли перед покупкой</p>
         </div>
-
       </div>
 
       <div class="portrait-wrap">
@@ -801,11 +775,11 @@
           alt="Ольга Зверева"
         >
       </div>
-
     </section>
 
-    <section class="checks" aria-label="Что проверяется">
+    <!-- НАПРАВЛЕНИЯ ПРОВЕРКИ -->
 
+    <section class="checks" aria-label="Что проверяется">
       <div class="check">
         <span class="number">1</span>
         <span class="check-text">Категория земли и ВРИ</span>
@@ -830,100 +804,107 @@
         <span class="number">5</span>
         <span class="check-text">Возможность строительства</span>
       </div>
-
     </section>
 
     <!-- ПРИМЕР ПРОВЕРКИ И ОБ ЭКСПЕРТЕ -->
 
     <section class="info-grid" aria-label="Пример проверки и об эксперте">
 
-      <!-- ПРИМЕР ИЗ ПРАКТИКИ -->
+      <!-- ЛЕВАЯ КОЛОНКА: ПРИМЕР ИЗ ПРАКТИКИ -->
 
       <article class="info-card practice-card">
 
-        <p class="info-label">ПРИМЕР ИЗ ПРАКТИКИ</p>
+        <p class="info-label">
+          Пример из практики проверки земельных участков
+        </p>
 
-        <h2 class="info-title">
-          Когда участок не подходит для строительства дома
-        </h2>
+        <h2 class="info-title">Как выглядит проверка участка</h2>
 
-        <p class="practice-location">г. Севастополь, ХХХХ</p>
+        <dl class="info-data">
 
-        <div class="practice-cadastral">
-          <span>КАДАСТРОВЫЙ НОМЕР</span>
-          <h3>00:00:000000:000</h3>
-        </div>
-
-        <div class="practice-data">
-
-          <div class="practice-item">
-            <span>Площадь</span>
-            <strong>436 м²</strong>
+          <div>
+            <dt>Кадастровый номер</dt>
+            <dd>00:00:000000:000</dd>
           </div>
 
-          <div class="practice-item">
-            <span>Категория</span>
-            <strong>Сельхозназначения</strong>
+          <div>
+            <dt>Местоположение и площадь</dt>
+            <dd>г. Севастополь, ХХХХ. Площадь 436 м² (4,36 сотки).</dd>
           </div>
 
-          <div class="practice-item">
-            <span>ВРИ</span>
-            <strong>Индивидуальное садоводство</strong>
+          <div>
+            <dt>Категория земли</dt>
+            <dd>Земли сельскохозяйственного назначения</dd>
           </div>
 
-          <div class="practice-item">
-            <span>Зона</span>
-            <strong>Жилая зона садоводства</strong>
+          <div>
+            <dt>Вид разрешённого использования</dt>
+            <dd>Для ведения индивидуального садоводства</dd>
           </div>
 
-        </div>
+          <div>
+            <dt>Территориальная зона</dt>
+            <dd>Жилая зона — зона ведения садоводства</dd>
+          </div>
 
-        <div class="practice-findings">
+          <div>
+            <dt>Что установлено</dt>
+            <dd>
+              По данным отчёта, на участке учтено капитальное строение.
+              Его площадь и правовой статус требуют дополнительного
+              подтверждения по сведениям ЕГРН.
+            </dd>
+          </div>
 
-          <h3>ЧТО ВЫЯВЛЕНО ПРИ ПРОВЕРКЕ</h3>
+          <div>
+            <dt>Выявленное ограничение</dt>
+            <dd>
+              Участок расположен на территории объекта
+              культурного наследия федерального значения.
+              Новое капитальное строительство запрещено
+              действующим режимом охраны ОКН.
+            </dd>
+          </div>
+
+        </dl>
+
+        <div class="info-result">
+          <strong>Вывод</strong>
 
           <p>
-            Участок находится в границах объекта
-            культурного наследия федерального значения.
+            Несмотря на разрешённый вид использования
+            «для ведения индивидуального садоводства»,
+            расположение участка на территории объекта
+            культурного наследия накладывает существенные
+            ограничения.
           </p>
 
           <p>
-            Новое капитальное строительство запрещено
-            действующим режимом охраны.
+            Новое капитальное строительство запрещено.
+            Работы с существующим зданием допускаются
+            в рамках режима сохранения объекта и по
+            согласованию с органом охраны культурного наследия.
           </p>
 
           <p>
-            Статус существующего строения требует
-            дополнительной проверки по ЕГРН
-            и режиму сохранения.
+            Покупка участка с целью строительства нового
+            жилого дома сопряжена с высоким риском.
           </p>
-
         </div>
 
-        <div class="practice-conclusion">
-
-          <strong>ВЫВОД ПО УЧАСТКУ</strong>
-
-          <p>
-            Высокий риск покупки, если цель приобретения
-            строительство нового жилого дома.
-          </p>
-
-        </div>
+        <p class="info-source">
+          Пример подготовлен на основании анализа открытых
+          сведений и документов. Кадастровый номер и адрес
+          заменены условными обозначениями.
+          Не является актуальным юридическим заключением
+          или разрешением на строительство.
+        </p>
 
       </article>
 
-      <!-- БЛОК ЭКСПЕРТА -->
+      <!-- ПРАВАЯ КОЛОНКА: ВАШ ЭКСПЕРТ -->
 
       <article class="info-card expert-card">
-
-        <div class="expert-photo">
-          <img
-            src="https://geocad.group/upload/iblock/2de/MZU6.jpg"
-            alt="Аэрофотоснимок земельных участков с обозначенными границами"
-            loading="lazy"
-          >
-        </div>
 
         <div class="expert-content">
 
@@ -943,16 +924,12 @@
             и Республике Крым.
           </p>
 
-          <h2 class="info-title" style="margin-top: 28px;">
-            С чем я могу вам помочь
-          </h2>
+          <h2 class="expert-subtitle">С чем я могу вам помочь</h2>
 
           <div class="expert-list">
 
             <div class="expert-point">
-
               <span class="expert-point-number">1</span>
-
               <div>
                 <h3>Можно ли построить дом?</h3>
                 <p>
@@ -960,13 +937,10 @@
                   которые влияют на строительство.
                 </p>
               </div>
-
             </div>
 
             <div class="expert-point">
-
               <span class="expert-point-number">2</span>
-
               <div>
                 <h3>Есть ли ограничения?</h3>
                 <p>
@@ -974,13 +948,10 @@
                   и другие территории с особыми условиями.
                 </p>
               </div>
-
             </div>
 
             <div class="expert-point">
-
               <span class="expert-point-number">3</span>
-
               <div>
                 <h3>Всё ли в порядке с документами?</h3>
                 <p>
@@ -988,13 +959,10 @@
                   арестах, ипотеке и других обременениях.
                 </p>
               </div>
-
             </div>
 
             <div class="expert-point">
-
               <span class="expert-point-number">4</span>
-
               <div>
                 <h3>Стоит ли покупать участок?</h3>
                 <p>
@@ -1002,30 +970,49 @@
                   землю так, как вы планируете.
                 </p>
               </div>
-
             </div>
 
           </div>
 
-        </div>
+          <h3 class="expert-subtitle">Дополнительно проверю</h3>
 
-        <div class="expert-result">
+          <ul class="expert-checklist">
+            <li>Сведения о продавце и его правах на участок</li>
+            <li>Соответствие документов сведениям реестров</li>
+            <li>Ограничения, обременения и возможные риски сделки</li>
+            <li>Вопросы, которые стоит уточнить у продавца до покупки</li>
+          </ul>
 
-          <strong>Результат проверки</strong>
-
-          <h3>Что вы получите</h3>
-
-          <p>
-            Понятное заключение о земельном участке. В нём будут указаны
-            выявленные ограничения и риски, оценка возможности строительства,
-            а также вопросы, которые необходимо уточнить до покупки.
-            Вы будете понимать, подходит ли участок для ваших планов
-            и на что обратить внимание, прежде чем передавать деньги продавцу.
-          </p>
+          <div class="expert-price">
+            <span class="expert-price-label">
+              Проверка участка и письменное заключение
+            </span>
+            <span class="expert-price-value">15 000 ₽</span>
+          </div>
 
         </div>
 
       </article>
+
+      <!-- ОТДЕЛЬНЫЙ ШИРОКИЙ БЛОК ПОД ДВУМЯ КОЛОНКАМИ -->
+
+      <div class="expert-result">
+
+        <strong>Результат проверки</strong>
+
+        <h3>Что вы получите</h3>
+
+        <p>
+          Понятное письменное заключение о земельном участке.
+          В нём будут указаны выявленные ограничения и риски,
+          оценка возможности строительства, результаты проверки
+          документов и продавца, а также вопросы, которые необходимо
+          уточнить до покупки. Вы будете понимать, подходит ли участок
+          для ваших планов и на что обратить внимание, прежде чем
+          передавать деньги продавцу.
+        </p>
+
+      </div>
 
     </section>
 
@@ -1034,7 +1021,6 @@
     <section class="trial-card" aria-label="Пробная проверка участка">
 
       <div class="trial-copy">
-
         <h2 class="trial-title">
           Попробуйте проверить участок самостоятельно
         </h2>
@@ -1043,7 +1029,6 @@
           Перейдите в «Навигатор по земле» и познакомьтесь
           с возможностями сервиса на пробной проверке.
         </p>
-
       </div>
 
       <a
